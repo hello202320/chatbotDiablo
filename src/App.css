@@ -1,38 +1,259 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (prefers-color-scheme: light) {
+    body {
+      color: #121212;
+      background: #eee;
+    }
+  
+    .line{
+      background: #121212 !important;
+    }
+  
+    .sign-out{
+      color: #121212!important;
+    }
+  
+    textarea{
+      background: lightgrey!important;
+      color: #121212!important;
+      caret-color: #121212!important;
+      border: 2px solid lightgrey!important;
+    }
+  
+    .character-count {
+      color: #121212!important;
+    }
+  
+    .btn{
+      background-color: lightgray!important;
+      border-color: lightgray!important;
+    }
+    .fonticon{
+      color: #121212 !important;
+    }
+    .recieved .message-text{
+      background-color: lightgrey!important;
+    }
+    
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @media (prefers-color-scheme: dark) {
+    body {
+      background:#121212;
+      color: #eee; 
+    }
+    img {
+      filter: brightness(.8) contrast(1.2);
+    }
+    .fonticon{
+      color: #eee !important;
+    }
+    
   }
-  to {
-    transform: rotate(360deg);
+  
+  
+  @media screen and (max-width: 768px) {
+    .App {
+      max-width: none !important;
+      width: 90% !important;
+    }
+    .message-text {
+      max-width:80%!important;
+    }
+  
   }
-}
+  
+  .App{
+    display:flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .container {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .filler {
+    flex-grow: 1;
+  }
+  
+  .messages {
+    flex-shrink: 0;
+  
+  }
+  .container::-webkit-scrollbar {
+    width: 0.1em; 
+    background-color: transparent; 
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+  }
+  .header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .header-title{
+    padding-right: 10px;
+  }
+  
+  .sign-in-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .sign-in-header{
+    margin-right: 10px;
+  }
+  
+  .sign-in{
+    background-color: #008000;
+    color: #eee;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+  }
+  
+  .line {
+    height: 35vh;
+    background-color: #eee;
+    width:1px;
+    margin-right: 10px;
+  }
+  
+  .sign-out {
+    color: #eee;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .received {
+    align-self: start;
+    max-width: 90%;
+  }
+  
+  .sent {
+    align-self: end;
+    max-width: 90%;
+  }
+  
+  
+  .message-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  
+  .message-content img {
+    border-radius: 50%;
+    height: 35px;
+  }
+  
+  .recieved .message-content img {
+    margin-right: 10px; 
+  }
+  
+  .sent .message-content img {
+    margin-left: 10px; 
+  }
+  
+  .sent .message-content{
+    flex-direction: row-reverse;
+  }
+  
+  
+  .message-text {
+    border-radius: 15px; 
+    background-color: #008000; 
+    padding-left: 10px;
+    padding-right: 10px;
+    word-wrap: break-word;
+    font-family: Menlo, Monaco, monospace;
+    max-width: 50%;
+  }
+  
+  .recieved .message-text{
+    background-color: #333333;
+  }
+  
+  
+  form{
+    margin: 0 auto;
+  }
+  
+  textarea{
+    background-color: #333333;
+    font-size: 25px;
+    color: #eee;
+    caret-color: #eee;
+    width:100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #333333;
+    border-radius: 7px;
+    overflow: hidden;
+    resize: vertical;
+    resize: none;
+  }
+  
+  textarea:focus{
+    outline:none;
+  }
+  
+  .textarea-wrapper {
+    position: relative;
+    width:100%;
+    margin-right: 10px;
+  }
+  
+  .character-count {
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    color: #eee;
+    font-size: 15px;
+  }
+  
+  
+  .buttons{
+    margin: 0 auto;
+  }
+  .form-container{
+    display: flex;
+    align-items: row;
+    z-index:2;
+  }
+  
+  .btn{
+    height:100px;
+    width:100px;
+    border-radius:15px;
+    background-color: #333333;
+    border-color: #333333;
+    float: right;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
